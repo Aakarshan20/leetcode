@@ -1,5 +1,7 @@
 package questions;
 
+import java.util.HashMap;
+
 public class TwoSum {
     /**
      *
@@ -20,12 +22,30 @@ public class TwoSum {
      * @return
      */
     public static int[] twoSum(int[] nums, int target){
-        if(nums == null || nums.length < 2){ //
-
+        int[] result = new int[]{-1,-1};// 初始化返回結果
+        if(nums == null || nums.length < 2){ // 如果nums裡面的值不足以加總
+            return result;
         }
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        // array to hashmap
+        for(int i=0; i<nums.length; i++){
+            if(map.containsKey(target- nums[i])){ // 判斷map中是否已有與當前array元素加成target
+                result[0] =  map.get(target - nums[i]);
+                result[1] = i;
+                break;
+            }
+            map.put(nums[i], i);
+        }
+        return result;
     }
 
     public static void main(String[] args) {
-        System.out.println(123);
+        int[] nums = new int[]{2, 7, 11, 15};
+        int target = 180;
+        int[] result = twoSum(nums,target);
+        for(int index: result){
+            System.out.println(index);
+        }
     }
 }
