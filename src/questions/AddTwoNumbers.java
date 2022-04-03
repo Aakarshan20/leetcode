@@ -92,6 +92,7 @@ public class AddTwoNumbers {
         l5.next.next.next = new ListNode(9);
 
         ListNode l6 = addTwoNumbers.addTwoNumbers(l4, l5);
+        System.out.println("");
         System.out.print(l6.val);
         while(l6.next != null){
             ListNode currentNode = l6.next;
