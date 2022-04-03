@@ -17,9 +17,9 @@ public class TwoSum {
      time: O(n)
      space: O(n)
 
-     * @param nums
-     * @param target
-     * @return
+     * @param nums int[]
+     * @param target int
+     * @return int[]
      */
     public static int[] twoSum(int[] nums, int target){
         int[] result = new int[]{-1,-1};// 初始化返回結果
